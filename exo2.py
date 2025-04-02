@@ -1,18 +1,13 @@
-age = int(input("veullez saisir votre age : "))
-etudiant = input("Etes vous etudiant ? (oui/non): ")
-premium = input("Voullez vous un siege premium ? (oui/non): ")
-heure = int(input("veullez saisir l'heure de seance choisie : "))
-prix_total = 0
-if age < 12:
-    print("le film vous est interdit ")
+print("les nombre premier")
+nombre = int(input("veullez saisir un nombre :"))
+if nombre == 2 or nombre == 3:
+    print(nombre)
+elif nombre < 2 or nombre % 2 == 0:
+    print("le nombre n'est pas premier")
 else:
-    if heure < 12:
-        prix_total = 4000
-    else:
-        prix_total = 5000
-    if etudiant == "oui":
-        prix_total -= 1500
-    elif heure > 20 and premium == "oui":
-        prix_total += 1000
+    for i in range(3, int(nombre**0.5) + 1, 2):
+        if nombre / i == 0:
+            print("le nombre n'est pas premier")
+        else:
+            print(nombre, end="")
 
-print(f"le prix final de votre billet est de {prix_total:.2f} francs. ")
